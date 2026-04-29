@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://bmt2758xrunec"]
+
+[ext_resource type="Script" uid="uid://dvld3vsuwuj6i" path="res://scripts/battle_scene.gd" id="1_86e2w"]
+[ext_resource type="PackedScene" uid="uid://1f8xgfl67kp" path="res://scenes/arena/arena_grid.tscn" id="2_fbx2k"]
+[ext_resource type="PackedScene" uid="uid://dcxgioh4f38a2" path="res://scenes/entities/player.tscn" id="3_o5jaf"]
+[ext_resource type="Script" uid="uid://chavxckglebw2" path="res://scripts/rhythm_clock.gd" id="4_1q7v0"]
+[ext_resource type="PackedScene" path="res://scenes/ui/beat_visualizer.tscn" id="5_5a76u"]
+[ext_resource type="Script" uid="uid://c5eeib3cfrdsv" path="res://scripts/hp_display.gd" id="6_hpdisp"]
+
+[node name="Battle" type="Node2D" unique_id=1603542743]
+position = Vector2(5, 6)
+script = ExtResource("1_86e2w")
+
+[node name="Arena" parent="." unique_id=472090374 instance=ExtResource("2_fbx2k")]
+scale = Vector2(1.5, 1.5)
+
+[node name="Player" parent="." unique_id=986412082 instance=ExtResource("3_o5jaf")]
+position = Vector2(0, -9)
+
+[node name="RhythmClock" type="Node" parent="." unique_id=903540684]
+script = ExtResource("4_1q7v0")
+bpm = 118.0
+auto_start = false
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="RhythmClock" unique_id=1932422809]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=317971354]
+position = Vector2(0, -72)
+zoom = Vector2(0.845, 0.845)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=138861662]
+
+[node name="BeatVisualizer" parent="CanvasLayer" unique_id=2068891972 instance=ExtResource("5_5a76u")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -9.0
+offset_top = 38.0
+offset_right = 1290.0
+offset_bottom = 158.0
+
+[node name="HUD" type="VBoxContainer" parent="CanvasLayer" unique_id=1825735653]
+visible = false
+offset_left = 18.0
+offset_top = 18.0
+offset_right = 560.0
+offset_bottom = 110.0
+theme_override_constants/separation = 4
+
+[node name="BeatLabel" type="Label" parent="CanvasLayer/HUD" unique_id=343105310]
+layout_mode = 2
+text = "Beat: 0"
+
+[node name="TimingLabel" type="Label" parent="CanvasLayer/HUD" unique_id=1197058247]
+layout_mode = 2
+text = "Input: WAITING"
+
+[node name="HpDisplay" type="HBoxContainer" parent="CanvasLayer" unique_id=1471460309]
+offset_left = 20.0
+offset_top = 16.0
+offset_right = 220.0
+offset_bottom = 56.0
+script = ExtResource("6_hpdisp")

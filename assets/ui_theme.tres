@@ -1,0 +1,11 @@
+[gd_resource type="Theme" format=3]
+
+[ext_resource type="FontFile" path="res://assets/ZT_nature_Font/ZT Nature - TT/ZTNature-Bold.ttf" id="1_font_bold"]
+[ext_resource type="FontFile" path="res://assets/ZT_nature_Font/ZT Nature - TT/ZTNature-Regular.ttf" id="2_font_regular"]
+
+[resource]
+default_font = ExtResource("1_font_bold")
+default_font_size = 16
+
+Button/fonts/font = ExtResource("1_font_bold")
+Label/fonts/font = ExtResource("1_font_bold")

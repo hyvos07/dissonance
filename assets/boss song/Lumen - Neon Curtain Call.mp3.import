@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bx06tgg3kby7m"
+path="res://.godot/imported/Lumen - Neon Curtain Call.mp3-11ed3977d3e1d80bb7de149953807e25.mp3str"
+
+[deps]
+
+source_file="res://assets/boss song/Lumen - Neon Curtain Call.mp3"
+dest_files=["res://.godot/imported/Lumen - Neon Curtain Call.mp3-11ed3977d3e1d80bb7de149953807e25.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
