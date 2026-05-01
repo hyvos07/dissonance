@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/story_mode.gd" id="1_script"]
 [ext_resource type="Theme" path="res://assets/ui_theme.tres" id="2_theme"]
+[ext_resource type="PackedScene" uid="uid://dcxgioh4f38a2" path="res://scenes/entities/player.tscn" id="3_player"]
+[ext_resource type="PackedScene" uid="uid://8eq0nkinlf7a" path="res://scenes/entities/buna.tscn" id="4_buna"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dialogue"]
 bg_color = Color(0.02, 0.04, 0.1, 0.92)
@@ -27,7 +29,18 @@ grow_vertical = 2
 theme = ExtResource("2_theme")
 script = ExtResource("1_script")
 
-[node name="BG" type="ColorRect" parent="."]
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="BGBaseColor" type="ColorRect" parent="BG"]
+show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -41,13 +54,13 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -250.0
-offset_top = 16.0
-offset_right = -16.0
-offset_bottom = 44.0
+offset_left = -400.0
+offset_top = 24.0
+offset_right = -24.0
+offset_bottom = 60.0
 grow_horizontal = 0
-theme_override_colors/font_color = Color(0.6, 0.7, 0.85, 0.6)
-theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(0.9, 0.95, 1, 1)
+theme_override_font_sizes/font_size = 28
 text = ""
 horizontal_alignment = 2
 
@@ -60,7 +73,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="SuisSprite" type="TextureRect" parent="CharacterLayer"]
+[node name="SuisSprite" type="Control" parent="CharacterLayer"]
 visible = false
 layout_mode = 0
 offset_left = 140.0
@@ -68,10 +81,12 @@ offset_top = 80.0
 offset_right = 440.0
 offset_bottom = 580.0
 mouse_filter = 2
-expand_mode = 1
-stretch_mode = 5
 
-[node name="BunaSprite" type="TextureRect" parent="CharacterLayer"]
+[node name="SuisNode" parent="CharacterLayer/SuisSprite" instance=ExtResource("3_player")]
+position = Vector2(150, 300)
+scale = Vector2(4, 4)
+
+[node name="BunaSprite" type="Control" parent="CharacterLayer"]
 visible = false
 layout_mode = 0
 offset_left = 840.0
@@ -79,11 +94,14 @@ offset_top = 80.0
 offset_right = 1140.0
 offset_bottom = 580.0
 mouse_filter = 2
-expand_mode = 1
-stretch_mode = 5
 
-[node name="DialogueBox" type="PanelContainer" parent="."]
+[node name="BunaNode" parent="CharacterLayer/BunaSprite" instance=ExtResource("4_buna")]
+position = Vector2(150, 300)
+scale = Vector2(-4, 4)
+
+[node name="DialogueBox" type="Control" parent="."]
 visible = false
+z_index = 30
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -95,36 +113,72 @@ offset_right = -40.0
 offset_bottom = -24.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="NameBox" type="PanelContainer" parent="DialogueBox"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = -56.0
+offset_right = 240.0
+offset_bottom = -8.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_dialogue")
 
-[node name="VBox" type="VBoxContainer" parent="DialogueBox"]
+[node name="NameLabel" type="Label" parent="DialogueBox/NameBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.85, 1.0, 1)
+theme_override_font_sizes/font_size = 24
+text = ""
+horizontal_alignment = 1
+
+[node name="MainBox" type="PanelContainer" parent="DialogueBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dialogue")
+
+[node name="MarginContainer" type="MarginContainer" parent="DialogueBox/MainBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 16
+
+[node name="VBox" type="VBoxContainer" parent="DialogueBox/MainBox/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 4
 
-[node name="NameLabel" type="Label" parent="DialogueBox/VBox"]
+[node name="TextLabel" type="RichTextLabel" parent="DialogueBox/MainBox/MarginContainer/VBox"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.9, 0.85, 1.0, 1.0)
-theme_override_font_sizes/font_size = 20
-text = ""
-
-[node name="TextLabel" type="RichTextLabel" parent="DialogueBox/VBox"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-theme_override_colors/default_color = Color(0.88, 0.9, 0.96, 1.0)
-theme_override_font_sizes/font_size = 18
+theme_override_colors/default_color = Color(0.88, 0.9, 0.96, 1)
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/italics_font_size = 24
 bbcode_enabled = true
 text = ""
 fit_content = true
 scroll_active = false
 
-[node name="ContinueIndicator" type="Label" parent="DialogueBox/VBox"]
+[node name="ContinueIndicator" type="Label" parent="DialogueBox"]
 unique_name_in_owner = true
 visible = false
-layout_mode = 2
-theme_override_colors/font_color = Color(0.6, 0.75, 1.0, 0.8)
-theme_override_font_sizes/font_size = 16
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -48.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.6, 0.75, 1, 0.8)
+theme_override_font_sizes/font_size = 28
 text = "▼"
 horizontal_alignment = 2
 

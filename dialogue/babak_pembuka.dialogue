@@ -4,7 +4,7 @@ do set_background("perpustakaan_siang")
 do show_character("suis", "center")
 do fade_in()
 
-NARASI: Ia kembali. Ia sendiri tidak mengerti mengapa. #narasi
+NARASI: Ia kembali. Ia sendiri tidak mengerti mengapa.
 
 do show_character("buna", "right")
 do move_character("suis", "left")
@@ -59,7 +59,7 @@ Buna: Pecahan mereka tersebar di sekitar sekolah ini. Temukan. Bawa kembali ke s
 
 Suis: Semudah itu?
 
-Buna: Tidak. Mereka tidak akan menyerah begitu saja. Kamu harus menghadapi mereka — dengan ritme, bukan kekerasan. Dengarkan musiknya. Ikuti ketukannya. Itu satu-satunya cara.
+Buna: Tidak. Mereka tidak akan menyerah begitu saja. Kamu harus menghadapi mereka dengan ritme, bukan kekerasan. Dengarkan musiknya. Ikuti ketukannya. Itu satu-satunya cara.
 
 Suis: ...oke. Mulai dari mana?
 

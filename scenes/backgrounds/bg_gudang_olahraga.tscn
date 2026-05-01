@@ -1,13 +1,13 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://bjpud0me0mt32"]
 
-[node name="BGGudangOlahraga" type="ColorRect"]
+[node name="BGGudangOlahraga" type="ColorRect" unique_id=1403357151]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color(0.06, 0.04, 0.04, 1)
 
-[node name="Label" type="Label" parent="."]
-anchors_preset = 1
+[node name="Label" type="Label" parent="." unique_id=818358067]
+layout_mode = 0
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -200.0

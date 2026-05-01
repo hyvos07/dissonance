@@ -4,28 +4,28 @@ do set_background("hitam")
 do play_sfx("dengungan")
 do fade_in()
 
-NARASI: Tahun 3067. Jam pelajaran ketiga. Suis belum menyimak sejak jam pertama. #narasi
+NARASI: Tahun 3067. Jam pelajaran ketiga. Suis belum menyimak sejak jam pertama.
 
 do set_background("kelas_12b")
 do show_character("suis", "center")
 
-NARASI: Bukan karena mengantuk. Bukan karena malas. Ia hanya tidak menemukan alasan untuk mendengarkan. #narasi
+NARASI: Bukan karena mengantuk. Bukan karena malas. Ia hanya tidak menemukan alasan untuk mendengarkan.
 
 Guru: ...dan harap diingat, produktivitas kuartalan kalian akan dinilai mulai minggu depan—
 
-Suis: ...seperti biasa. #inner_thought
+Suis: ...seperti biasa.
 
 do hide_character("suis")
 do dramatic_pause(1.0)
 
-NARASI: Suis tidak tahu mengapa kakinya membawanya ke perpustakaan hari itu. Ia bahkan tidak ingat kapan terakhir masuk ke sana. #narasi
+NARASI: Suis tidak tahu mengapa kakinya membawanya ke perpustakaan hari itu. Ia bahkan tidak ingat kapan terakhir masuk ke sana.
 
 do set_background("perpustakaan_siang")
 do show_character("suis", "center")
 
 Suis: ...sepi banget.
 
-NARASI: Di pojok antarmuka digital yang hampir tidak pernah disentuh, jarinya tidak sengaja membuka sebuah arsip lama. #narasi
+NARASI: Di pojok antarmuka digital yang hampir tidak pernah disentuh, jarinya tidak sengaja membuka sebuah arsip lama.
 
 Suis: ...musisi?
 
@@ -36,11 +36,11 @@ do play_music_preview()
 do dramatic_pause(4.0)
 do fade_in()
 
-NARASI: Ia tidak tahu kenapa ia menangis. Ia bahkan tidak tahu itu disebut apa. #narasi
+NARASI: Ia tidak tahu kenapa ia menangis. Ia bahkan tidak tahu itu disebut apa.
 
 Suis: ...eh?
 
-NARASI: Yang ia tahu hanya satu hal: ada sesuatu yang hilang dari dunia ini. Dan untuk pertama kalinya, ia ingin mencarinya. #narasi
+NARASI: Yang ia tahu hanya satu hal: ada sesuatu yang hilang dari dunia ini. Dan untuk pertama kalinya, ia ingin mencarinya.
 
 do fade_to_black()
 do end_chapter("prolog")

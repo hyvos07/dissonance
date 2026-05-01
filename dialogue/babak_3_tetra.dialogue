@@ -25,13 +25,14 @@ do move_character("suis", "center")
 
 Suis: Jumlah senar gitar... enam.
 
-NARASI: Bilik nomor enam. Suis membuka pintu — di sudut bawah, sebuah shard bergetar tidak menentu. Kadang berkedip cepat, kadang mati sejenak. #narasi
+NARASI: Bilik nomor enam. Suis membuka pintu — di sudut bawah, sebuah shard bergetar tidak menentu. Kadang berkedip cepat, kadang mati sejenak.
 
 Suis: Yang ini... gelisah ya.
 
 do screen_shake()
 do fade_to_black()
-=> pertarungan_tetra
+do start_boss_fight("TETRA")
+=> END
 
 ~ pertarungan_tetra
 
@@ -59,9 +60,9 @@ do start_boss_fight("TETRA")
 do fade_in()
 do show_character("suis", "center")
 
-NARASI: Empat menit dua puluh detik. Suara yang pernah membuatnya menangis tanpa alasan. #narasi
+NARASI: Empat menit dua puluh detik. Suara yang pernah membuatnya menangis tanpa alasan.
 
-NARASI: Ia ingat mengapa ia di sini. #narasi
+NARASI: Ia ingat mengapa ia di sini.
 
 TETRA: Hahh... hahh... kamu beneran lumayan.
 
@@ -77,7 +78,7 @@ Suis: Mereka lupa.
 
 TETRA: ...iya. Kayaknya gitu.
 
-NARASI: Shard berpendar. TETRA memudar — tapi sebelum benar-benar hilang, ia melambaikan tangan sekali. #narasi
+NARASI: Shard berpendar. TETRA memudar — tapi sebelum benar-benar hilang, ia melambaikan tangan sekali.
 
 do fade_to_black()
 do end_chapter("babak_3_tetra")

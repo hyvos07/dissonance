@@ -38,13 +38,13 @@ do hide_character("buna")
 do fade_to_black()
 do dramatic_pause(2.0)
 
-NARASI: Di luar, dunia masih abu-abu. #narasi
+NARASI: Di luar, dunia masih abu-abu.
 
-NARASI: Tapi di suatu sudut yang kecil, musik sedang dibuat. #narasi
+NARASI: Tapi di suatu sudut yang kecil, musik sedang dibuat.
 
-NARASI: Bukan untuk fungsi. Bukan untuk efisiensi. #narasi
+NARASI: Bukan untuk fungsi. Bukan untuk efisiensi.
 
-NARASI: Hanya untuk dirasakan. #narasi
+NARASI: Hanya untuk dirasakan.
 
 do end_chapter("epilog")
 => END

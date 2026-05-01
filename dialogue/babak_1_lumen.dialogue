@@ -12,13 +12,14 @@ do set_background("kelas_12b")
 
 Suis: Di sini kah...?
 
-NARASI: Cahaya redup bersinar dari bawah laci. Suis menarik tangannya — di telapaknya ada shard kecil yang hangat, berkilauan seperti lampu neon. #narasi
+NARASI: Cahaya redup bersinar dari bawah laci. Suis menarik tangannya — di telapaknya ada shard kecil yang hangat, berkilauan seperti lampu neon.
 
 Suis: ...cantik.
 
 do screen_shake()
 do fade_to_black()
-=> pertarungan_lumen
+do start_boss_fight("LUMEN")
+=> END
 
 ~ pertarungan_lumen
 
@@ -54,7 +55,7 @@ do dramatic_pause(1.5)
 
 LUMEN: ...terima kasih.
 
-NARASI: Shard berdenyar. LUMEN memudar. Shard kembali ke tangan Suis — tapi kali ini terasa lebih hangat. #narasi
+NARASI: Shard berdenyar. LUMEN memudar. Shard kembali ke tangan Suis — tapi kali ini terasa lebih hangat.
 
 do fade_to_black()
 do end_chapter("babak_1_lumen")

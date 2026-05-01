@@ -15,7 +15,7 @@ extends Control
 @onready var _back_btn: Button = %BackButton
 @onready var _vbox: VBoxContainer = $VBoxContainer
 
-const MENU_MUSIC_PATH: String = "res://assets/Empty Plaza Memory.mp3"
+const MENU_MUSIC_PATH: String = "res://assets/mainmenu.mp3"
 
 
 func _ready() -> void:
@@ -54,7 +54,7 @@ func _update_menu_state() -> void:
 
 	# Free Play: only if story completed
 	_freeplay_btn.disabled = not story_done
-	_freeplay_btn.modulate.a = 1.0 if story_done else 1.0
+	_freeplay_btn.modulate.a = 1.0
 	if not story_done:
 		_freeplay_btn.tooltip_text = "Complete Story Mode to unlock"
 	else:
@@ -143,6 +143,7 @@ func _on_new_story() -> void:
 	GameManager.in_story_mode = true
 	GameManager.story_resume_title = ""
 	GameManager.story_resume_chapter = ""
+	GameManager.save_progress()
 	get_tree().change_scene_to_file("res://scenes/story/story_mode.tscn")
 
 

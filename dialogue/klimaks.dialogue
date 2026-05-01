@@ -20,9 +20,9 @@ Buna: Berdirilah sedikit ke belakang.
 do hide_character("suis")
 do hide_character("buna")
 
-NARASI: Ketiga shard bergetar, saling menarik satu sama lain — lalu cahaya meluap. Bukan ledakan. Justru sebaliknya: cahaya yang pelan, hangat, seperti matahari terbit di dalam ruangan. #narasi
+NARASI: Ketiga shard bergetar, saling menarik satu sama lain — lalu cahaya meluap. Bukan ledakan. Justru sebaliknya: cahaya yang pelan, hangat, seperti matahari terbit di dalam ruangan.
 
-NARASI: Melodi mengalun. Tidak sempurna, tidak teratur — tapi hidup. #narasi
+NARASI: Melodi mengalun. Tidak sempurna, tidak teratur — tapi hidup.
 
 LUMEN: ...sudah lama.
 
@@ -30,7 +30,7 @@ ARIA: Terlalu lama.
 
 TETRA: ...
 
-NARASI: Ketiganya memudar. Melodi masih mengalun pelan di udara. #narasi
+NARASI: Ketiganya memudar. Melodi masih mengalun pelan di udara.
 
 do show_character("suis", "left")
 do show_character("buna", "right")

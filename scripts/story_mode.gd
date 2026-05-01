@@ -14,7 +14,7 @@ const CHAPTER_DIALOGUE: Dictionary = {
 }
 
 ## Boss music mapping (for ambient preview)
-const MENU_MUSIC_PATH: String = "res://assets/Empty Plaza Memory.mp3"
+const VN_MUSIC_PATH: String = "res://assets/bg sont for vn.mp3"
 
 ## Character name → color mapping
 const CHARACTER_COLORS: Dictionary = {
@@ -28,14 +28,14 @@ const CHARACTER_COLORS: Dictionary = {
 }
 
 ## Background scenes
-const BG_COLORS: Dictionary = {
-	"hitam": Color(0.0, 0.0, 0.0),
-	"kelas_12b": Color(0.08, 0.06, 0.12),
-	"koridor": Color(0.06, 0.06, 0.1),
-	"perpustakaan_siang": Color(0.07, 0.05, 0.1),
-	"perpustakaan_malam": Color(0.03, 0.02, 0.06),
-	"gudang_olahraga": Color(0.06, 0.04, 0.04),
-	"toilet_wanita": Color(0.05, 0.06, 0.08),
+const BG_TEXTURES: Dictionary = {
+	"hitam": "",
+	"kelas_12b": "res://assets/vn bg/kelas_siang_kosong.png",
+	"koridor": "res://assets/vn bg/koridor_siang.png",
+	"perpustakaan_siang": "res://assets/vn bg/perpus_siang.png",
+	"perpustakaan_malam": "res://assets/vn bg/perpus_malam.png",
+	"gudang_olahraga": "res://assets/vn bg/ruang_bola.png",
+	"toilet_wanita": "res://assets/vn bg/toilet.png",
 }
 
 const BG_LABELS: Dictionary = {
@@ -49,15 +49,16 @@ const BG_LABELS: Dictionary = {
 }
 
 ## Nodes
-@onready var _bg_rect: ColorRect = $BG
+@onready var _bg_rect: TextureRect = $BG
 @onready var _bg_label: Label = $BGLabel
 @onready var _fade_overlay: ColorRect = $FadeOverlay
-@onready var _dialogue_box: PanelContainer = $DialogueBox
+@onready var _dialogue_box: Control = $DialogueBox
+@onready var _name_box: PanelContainer = %NameBox
 @onready var _name_label: Label = %NameLabel
 @onready var _text_label: RichTextLabel = %TextLabel
 @onready var _continue_indicator: Label = %ContinueIndicator
-@onready var _suis_sprite: TextureRect = $CharacterLayer/SuisSprite
-@onready var _buna_sprite: TextureRect = $CharacterLayer/BunaSprite
+@onready var _suis_sprite: Control = $CharacterLayer/SuisSprite
+@onready var _buna_sprite: Control = $CharacterLayer/BunaSprite
 @onready var _music_player: AudioStreamPlayer = $MusicPlayer
 
 signal boss_fight_requested()
@@ -65,7 +66,7 @@ signal boss_fight_requested()
 ## State
 var _is_overlay: bool = false
 var _dialogue_resource: Resource = null
-var _dialogue_line = null  # DialogueLine
+var _dialogue_line = null # DialogueLine
 var _is_typing: bool = false
 var _typing_tween: Tween = null
 var _waiting_for_input: bool = false
@@ -73,11 +74,12 @@ var _pending_boss_fight: String = ""
 var _chapter_ended: bool = false
 var _current_text: String = ""
 var _visible_chars: int = 0
+var _skip_overlay: Control = null
 
 ## Character visibility state
 var _suis_visible: bool = false
 var _buna_visible: bool = false
-var _suis_position: String = "center"  # "left", "center", "right"
+var _suis_position: String = "center" # "left", "center", "right"
 var _buna_position: String = "right"
 
 
@@ -92,8 +94,8 @@ func _ready() -> void:
 	_buna_sprite.visible = false
 	_continue_indicator.visible = false
 
-	# Load character textures
-	_load_character_textures()
+	# Setup character sprites
+	_setup_character_sprites()
 
 	# Setup music
 	_setup_music()
@@ -102,13 +104,16 @@ func _ready() -> void:
 	_start_current_chapter()
 
 
-func _load_character_textures() -> void:
-	var suis_path: String = "res://assets/characters/suis/suis_default.png"
-	var buna_path: String = "res://assets/characters/buna/buna_default.png"
-	if ResourceLoader.exists(suis_path):
-		_suis_sprite.texture = load(suis_path)
-	if ResourceLoader.exists(buna_path):
-		_buna_sprite.texture = load(buna_path)
+func _setup_character_sprites() -> void:
+	if _suis_sprite.has_node("SuisNode/Visual/Sprite"):
+		var suis_anim: AnimatedSprite2D = _suis_sprite.get_node("SuisNode/Visual/Sprite")
+		suis_anim.play("idle_sideway")
+		suis_anim.stop() # frozen
+	
+	if _buna_sprite.has_node("BunaNode/Visual/Sprite"):
+		var buna_anim: AnimatedSprite2D = _buna_sprite.get_node("BunaNode/Visual/Sprite")
+		buna_anim.play("idle_sideway")
+		buna_anim.stop() # frozen
 
 
 func setup_as_overlay() -> void:
@@ -122,7 +127,7 @@ func setup_as_overlay() -> void:
 func _setup_music() -> void:
 	if _is_overlay:
 		return
-	var stream = load(MENU_MUSIC_PATH)
+	var stream = load(VN_MUSIC_PATH)
 	if stream == null:
 		return
 	if stream is AudioStreamMP3:
@@ -134,7 +139,18 @@ func _setup_music() -> void:
 
 
 func _start_current_chapter() -> void:
+	_hide_all_characters()
+	
 	var chapter_name: String = GameManager.get_current_chapter()
+	
+	# Override if we are resuming from a boss fight
+	if not GameManager.story_resume_chapter.is_empty():
+		chapter_name = GameManager.story_resume_chapter
+		var idx = GameManager.STORY_CHAPTERS.find(chapter_name)
+		if idx >= 0:
+			GameManager.story_chapter_index = idx
+		GameManager.story_resume_chapter = ""
+		
 	if chapter_name.is_empty():
 		_finish_story()
 		return
@@ -164,7 +180,7 @@ func _get_next_line(from_id: String = "") -> void:
 		push_error("StoryMode: DialogueManager singleton not found!")
 		return
 
-	_dialogue_line = await dm.get_next_dialogue_line(_dialogue_resource, from_id, [self])
+	_dialogue_line = await dm.get_next_dialogue_line(_dialogue_resource, from_id, [ self ])
 
 	if _dialogue_line == null:
 		# End of dialogue
@@ -191,10 +207,10 @@ func _show_dialogue_line() -> void:
 	# Handle character name display
 	if is_narration or character.is_empty():
 		_name_label.text = ""
-		_name_label.visible = false
+		_name_box.visible = false
 	else:
 		_name_label.text = character
-		_name_label.visible = true
+		_name_box.visible = true
 		var color: Color = CHARACTER_COLORS.get(character, Color.WHITE)
 		_name_label.add_theme_color_override("font_color", color)
 
@@ -261,10 +277,14 @@ func _update_character_focus(speaker: String) -> void:
 		tw.tween_property(_buna_sprite, "modulate:a", target_alpha, 0.2)
 
 
-func _unhandled_input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and not event.echo:
 		if event.keycode == KEY_ESCAPE and not _is_overlay:
-			_show_skip_prompt()
+			if _skip_overlay != null and is_instance_valid(_skip_overlay):
+				_skip_overlay.queue_free()
+				_skip_overlay = null
+			else:
+				_show_skip_prompt()
 			return
 
 	# Accept input (click, space, enter)
@@ -298,7 +318,9 @@ func _show_skip_prompt() -> void:
 	overlay.color = Color(0, 0, 0, 0.7)
 	overlay.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	overlay.mouse_filter = Control.MOUSE_FILTER_STOP
+	overlay.z_index = 100
 	add_child(overlay)
+	_skip_overlay = overlay
 
 	var center := CenterContainer.new()
 	center.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
@@ -331,12 +353,16 @@ func _show_skip_prompt() -> void:
 	quit_btn.add_theme_font_size_override("font_size", 20)
 	quit_btn.pressed.connect(func():
 		GameManager.in_story_mode = false
+		GameManager.save_progress()
 		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 	)
 	vbox.add_child(quit_btn)
 
 
 func _on_chapter_finished() -> void:
+	if _is_overlay:
+		return
+		
 	_chapter_ended = true
 	_dialogue_box.visible = false
 
@@ -389,8 +415,11 @@ func _finish_story() -> void:
 ## ---- Mutation Functions (called from .dialogue files) ----
 
 func set_background(bg_name: String) -> void:
-	var color: Color = BG_COLORS.get(bg_name, Color(0.05, 0.05, 0.08))
-	_bg_rect.color = color
+	var tex_path: String = BG_TEXTURES.get(bg_name, "")
+	if tex_path.is_empty():
+		_bg_rect.texture = null
+	else:
+		_bg_rect.texture = load(tex_path)
 
 	var label_text: String = BG_LABELS.get(bg_name, "")
 	if label_text.is_empty():
@@ -401,13 +430,13 @@ func set_background(bg_name: String) -> void:
 		# Fade in/out location label
 		_bg_label.modulate.a = 0.0
 		var tw := create_tween()
-		tw.tween_property(_bg_label, "modulate:a", 0.6, 0.5)
-		tw.tween_interval(2.0)
+		tw.tween_property(_bg_label, "modulate:a", 1.0, 0.5)
+		tw.tween_interval(3.0)
 		tw.tween_property(_bg_label, "modulate:a", 0.0, 1.0)
 
 
 func show_character(char_name: String, position: String = "center") -> void:
-	var sprite: TextureRect = _get_character_sprite(char_name)
+	var sprite: Control = _get_character_sprite(char_name)
 	if sprite == null:
 		return
 
@@ -431,7 +460,7 @@ func show_character(char_name: String, position: String = "center") -> void:
 
 
 func hide_character(char_name: String) -> void:
-	var sprite: TextureRect = _get_character_sprite(char_name)
+	var sprite: Control = _get_character_sprite(char_name)
 	if sprite == null:
 		return
 
@@ -450,7 +479,7 @@ func hide_character(char_name: String) -> void:
 
 
 func move_character(char_name: String, position: String) -> void:
-	var sprite: TextureRect = _get_character_sprite(char_name)
+	var sprite: Control = _get_character_sprite(char_name)
 	if sprite == null:
 		return
 
@@ -539,7 +568,7 @@ func end_chapter(_chapter_name: String) -> void:
 	pass
 
 
-func _get_character_sprite(char_name: String) -> TextureRect:
+func _get_character_sprite(char_name: String) -> Control:
 	match char_name.to_lower():
 		"suis":
 			return _suis_sprite
@@ -548,13 +577,13 @@ func _get_character_sprite(char_name: String) -> TextureRect:
 	return null
 
 
-func _position_character(sprite: TextureRect, pos: String) -> void:
+func _position_character(sprite: Control, pos: String) -> void:
 	var x: float = _get_position_x(pos, sprite)
 	sprite.position.x = x
-	sprite.position.y = 80  # Base Y position
+	sprite.position.y = 80 # Base Y position
 
 
-func _get_position_x(pos: String, sprite: TextureRect) -> float:
+func _get_position_x(pos: String, sprite: Control) -> float:
 	var screen_w: float = get_viewport_rect().size.x
 	var sprite_w: float = sprite.size.x if sprite.size.x > 0 else 300
 	match pos:

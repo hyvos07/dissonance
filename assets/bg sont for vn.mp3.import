@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cjs07g51rwkn6"
+path="res://.godot/imported/bg sont for vn.mp3-5d82af33b8fa984bb0db2c6f3104007a.mp3str"
+
+[deps]
+
+source_file="res://assets/bg sont for vn.mp3"
+dest_files=["res://.godot/imported/bg sont for vn.mp3-5d82af33b8fa984bb0db2c6f3104007a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

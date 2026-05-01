@@ -23,11 +23,12 @@ do move_character("suis", "center")
 
 Suis: Ketemu.
 
-NARASI: Shard itu tidak meledak. Ia hanya... bergetar. Pelan. Teratur. Seperti metronom. #narasi
+NARASI: Shard itu tidak meledak. Ia hanya... bergetar. Pelan. Teratur. Seperti metronom.
 
 do screen_shake()
 do fade_to_black()
-=> pertarungan_aria
+do start_boss_fight("ARIA")
+=> END
 
 ~ pertarungan_aria
 
@@ -67,7 +68,7 @@ ARIA: Tapi kamu bermain dengan sungguh-sungguh. Itu hal yang berbeda.
 
 ARIA: ...di zaman ini, itu sudah cukup langka untuk diapresiasi.
 
-NARASI: Shard berpendar. ARIA memudar. #narasi
+NARASI: Shard berpendar. ARIA memudar.
 
 do fade_to_black()
 do end_chapter("babak_2_aria")
