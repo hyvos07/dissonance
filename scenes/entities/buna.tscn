@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://8eq0nkinlf7a"]
+
+[ext_resource type="Script" uid="uid://cudel0vobp6aa" path="res://scripts/player.gd" id="1_h4dn0"]
+[ext_resource type="Script" uid="uid://fsksdarp0saq" path="res://scripts/player_visual.gd" id="2_qxlij"]
+[ext_resource type="Texture2D" uid="uid://cst3vus3w5t6x" path="res://assets/Snoblin_Prototype_Character/Assets/Extra/static_shadow.png" id="3_e3g8q"]
+[ext_resource type="Texture2D" uid="uid://b6pa610wpnqf3" path="res://assets/Snoblin_Prototype_Character/Assets/Prototype_Character/buna-Sheet.png" id="4_h4dn0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxlij"]
+atlas = ExtResource("4_h4dn0")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n5sgd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qxlij")
+}],
+"loop": true,
+"name": &"idle_sideway",
+"speed": 2.0
+}]
+
+[node name="Player" type="Node2D" unique_id=2052220457]
+z_index = 20
+script = ExtResource("1_h4dn0")
+
+[node name="Visual" type="Node2D" parent="." unique_id=1524565502]
+scale = Vector2(4, 4)
+script = ExtResource("2_qxlij")
+
+[node name="Shadow" type="Sprite2D" parent="Visual" unique_id=2102820836]
+modulate = Color(1, 1, 1, 0.75)
+position = Vector2(0, 0.9)
+texture = ExtResource("3_e3g8q")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Visual" unique_id=1126027106]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_n5sgd")
+animation = &"idle_sideway"

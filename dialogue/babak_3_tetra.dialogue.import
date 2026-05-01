@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dtdfksvb13vgl"
+path="res://.godot/imported/babak_3_tetra.dialogue-35e92cb1b4a2299b2fdc8e59e62fe010.tres"
+
+[deps]
+
+source_file="res://dialogue/babak_3_tetra.dialogue"
+dest_files=["res://.godot/imported/babak_3_tetra.dialogue-35e92cb1b4a2299b2fdc8e59e62fe010.tres"]
+
+[params]
+
+defaults=true

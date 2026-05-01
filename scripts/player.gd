@@ -162,3 +162,17 @@ func _sync_world_position() -> void:
 	if _arena == null:
 		return
 	global_position = _arena.grid_to_world(_grid_position)
+
+
+func teleport_to(cell: Vector2i) -> void:
+	var from_cell: Vector2i = _grid_position
+	_grid_position = cell
+	_sync_world_position()
+
+	# Visual flash to indicate forced teleport
+	if _visual:
+		_visual.modulate = Color(1.0, 1.0, 0.4, 1.0)
+		var tween := create_tween()
+		tween.tween_property(_visual, "modulate", Color(1.0, 1.0, 1.0, 1.0), 0.25)
+
+	move_resolved.emit("TELEPORTED", from_cell, _grid_position)

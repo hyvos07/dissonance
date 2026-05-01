@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://csgah3mi3lts2"
+path="res://.godot/imported/klimaks.dialogue-55070ecc1cf045903bdf592347cba988.tres"
+
+[deps]
+
+source_file="res://dialogue/klimaks.dialogue"
+dest_files=["res://.godot/imported/klimaks.dialogue-55070ecc1cf045903bdf592347cba988.tres"]
+
+[params]
+
+defaults=true

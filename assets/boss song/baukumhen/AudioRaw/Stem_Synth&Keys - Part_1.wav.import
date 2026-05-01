@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c616kq1udv28e"
+path="res://.godot/imported/Stem_Synth&Keys - Part_1.wav-625f92e6656c262de959e0c5d4ae7738.sample"
+
+[deps]
+
+source_file="res://assets/boss song/baukumhen/AudioRaw/Stem_Synth&Keys - Part_1.wav"
+dest_files=["res://.godot/imported/Stem_Synth&Keys - Part_1.wav-625f92e6656c262de959e0c5d4ae7738.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,1168 @@
+{
+  "level_name": "Tetra",
+  "grid_size": [6, 6],
+  "bpm_map": [
+    {
+      "start_sec": 0,
+      "bpm": 170
+    }
+  ],
+  "traps": [
+    {
+      "beat": 19,
+      "type": "lock",
+      "positions": [
+        [0, 0],
+        [0, 1],
+        [0, 4],
+        [0, 5],
+        [1, 5],
+        [1, 0],
+        [1, 1],
+        [1, 4],
+        [2, 0],
+        [2, 1],
+        [2, 5],
+        [5, 1],
+        [3, 1],
+        [4, 1],
+        [3, 0],
+        [4, 0],
+        [5, 0],
+        [3, 5],
+        [4, 5],
+        [5, 5],
+        [5, 4],
+        [4, 4],
+        [3, 4],
+        [2, 4]
+      ],
+      "warn_beats": 2,
+      "duration_beats": 13
+    },
+    {
+      "beat": 21,
+      "type": "chord",
+      "positions": [[0, 2]],
+      "warn_beats": 2,
+      "duration_beats": 6,
+      "direction": [1, 0]
+    },
+    {
+      "beat": 21,
+      "type": "chord",
+      "positions": [[5, 3]],
+      "warn_beats": 2,
+      "duration_beats": 6,
+      "direction": [-1, 0]
+    },
+    {
+      "beat": 27,
+      "type": "pulse",
+      "positions": [
+        [2, 2],
+        [3, 3],
+        [3, 2],
+        [2, 3]
+      ],
+      "warn_beats": 3,
+      "duration_beats": 1
+    },
+    {
+      "beat": 31,
+      "type": "pulse",
+      "positions": [
+        [0, 2],
+        [1, 2],
+        [2, 3],
+        [3, 3],
+        [4, 2],
+        [5, 2]
+      ],
+      "warn_beats": 3,
+      "duration_beats": 1
+    },
+    {
+      "beat": 35,
+      "type": "pulse",
+      "positions": [
+        [0, 5],
+        [1, 4],
+        [2, 2],
+        [3, 3],
+        [3, 2],
+        [2, 3],
+        [4, 1],
+        [5, 0],
+        [0, 0],
+        [1, 1],
+        [4, 4],
+        [5, 5]
+      ],
+      "warn_beats": 3,
+      "duration_beats": 1
+    },
+    {
+      "beat": 38,
+      "type": "chord",
+      "positions": [[2, 3]],
+      "warn_beats": 1,
+      "duration_beats": 3,
+      "direction": [-1, 0]
+    },
+    {
+      "beat": 38,
+      "type": "chord",
+      "positions": [[2, 2]],
+      "warn_beats": 1,
+      "duration_beats": 3,
+      "direction": [0, -1]
+    },
+    {
+      "beat": 38,
+      "type": "chord",
+      "positions": [[3, 2]],
+      "warn_beats": 1,
+      "duration_beats": 3,
+      "direction": [1, 0]
+    },
+    {
+      "beat": 38,
+      "type": "chord",
+      "positions": [[3, 3]],
+      "warn_beats": 1,
+      "duration_beats": 3,
+      "direction": [0, 1]
+    },
+    {
+      "beat": 41,
+      "type": "chord",
+      "positions": [[2, 3]],
+      "warn_beats": 1,
+      "duration_beats": 3,
+      "direction": [0, 1]
+    },
+    {
+      "beat": 41,
+      "type": "chord",
+      "positions": [[2, 2]],
+      "warn_beats": 1,
+      "duration_beats": 3,
+      "direction": [-1, 0]
+    },
+    {
+      "beat": 41,
+      "type": "chord",
+      "positions": [[3, 2]],
+      "warn_beats": 1,
+      "duration_beats": 3,
+      "direction": [0, -1]
+    },
+    {
+      "beat": 41,
+      "type": "chord",
+      "positions": [[3, 3]],
+      "warn_beats": 1,
+      "duration_beats": 3,
+      "direction": [1, 0]
+    },
+    {
+      "beat": 47,
+      "type": "lock",
+      "positions": [
+        [0, 0],
+        [0, 1],
+        [0, 2],
+        [0, 3],
+        [0, 4],
+        [0, 5],
+        [5, 0],
+        [5, 1],
+        [5, 2],
+        [5, 3],
+        [5, 4],
+        [5, 5]
+      ],
+      "warn_beats": 2,
+      "duration_beats": 17
+    },
+    {
+      "beat": 47,
+      "type": "pulse",
+      "positions": [
+        [1, 0],
+        [2, 0],
+        [3, 0],
+        [4, 0],
+        [1, 2],
+        [2, 2],
+        [3, 2],
+        [4, 2],
+        [1, 4],
+        [2, 4],
+        [3, 4],
+        [4, 4]
+      ],
+      "warn_beats": 3,
+      "duration_beats": 1
+    },
+    {
+      "beat": 51,
+      "type": "pulse",
+      "positions": [
+        [1, 5],
+        [2, 5],
+        [3, 5],
+        [4, 5],
+        [4, 3],
+        [3, 3],
+        [2, 3],
+        [1, 3],
+        [1, 1],
+        [2, 1],
+        [3, 1],
+        [4, 1]
+      ],
+      "warn_beats": 3,
+      "duration_beats": 1
+    },
+    {
+      "beat": 55,
+      "type": "pulse",
+      "positions": [
+        [3, 1],
+        [4, 1],
+        [4, 0],
+        [3, 0],
+        [1, 4],
+        [1, 5],
+        [2, 5],
+        [2, 4]
+      ],
+      "warn_beats": 3,
+      "duration_beats": 1
+    },
+    {
+      "beat": 59,
+      "type": "pulse",
+      "positions": [
+        [1, 2],
+        [4, 3],
+        [2, 2],
+        [3, 3],
+        [3, 2],
+        [2, 3]
+      ],
+      "warn_beats": 3,
+      "duration_beats": 1
+    },
+    {
+      "beat": 63,
+      "type": "pulse",
+      "positions": [
+        [2, 1],
+        [3, 1],
+        [2, 4],
+        [3, 4],
+        [1, 1],
+        [4, 1],
+        [1, 4],
+        [4, 4]
+      ],
+      "warn_beats": 3,
+      "duration_beats": 1
+    },
+    {
+      "beat": 65,
+      "type": "pulse",
+      "positions": [
+        [2, 3],
+        [3, 3],
+        [4, 4],
+        [1, 4]
+      ],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 67,
+      "type": "pulse",
+      "positions": [
+        [2, 2],
+        [3, 2],
+        [1, 1],
+        [4, 1]
+      ],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 68,
+      "type": "pulse",
+      "positions": [[2, 4]],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 69,
+      "type": "pulse",
+      "positions": [[3, 3]],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 70,
+      "type": "pulse",
+      "positions": [[4, 2]],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 71,
+      "type": "lock",
+      "positions": [
+        [5, 0],
+        [4, 0],
+        [3, 0],
+        [2, 0],
+        [1, 0],
+        [0, 0],
+        [0, 1],
+        [1, 1],
+        [0, 2],
+        [1, 2],
+        [0, 3],
+        [1, 3],
+        [0, 4],
+        [1, 4],
+        [0, 5],
+        [1, 5],
+        [2, 5],
+        [4, 5],
+        [5, 5],
+        [3, 5]
+      ],
+      "warn_beats": 2,
+      "duration_beats": 5
+    },
+    {
+      "beat": 71,
+      "type": "pulse",
+      "positions": [[5, 1]],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 72,
+      "type": "pulse",
+      "positions": [[5, 4]],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 73,
+      "type": "pulse",
+      "positions": [[4, 3]],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 74,
+      "type": "pulse",
+      "positions": [[3, 2]],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 75,
+      "type": "pulse",
+      "positions": [[2, 1]],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 76,
+      "type": "pulse",
+      "positions": [[3, 4]],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 77,
+      "type": "pulse",
+      "positions": [[2, 3]],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 78,
+      "type": "pulse",
+      "positions": [[1, 2]],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 79,
+      "type": "lock",
+      "positions": [
+        [0, 0],
+        [1, 0],
+        [2, 0],
+        [3, 0],
+        [4, 0],
+        [5, 0],
+        [4, 1],
+        [5, 1],
+        [5, 2],
+        [4, 2],
+        [4, 3],
+        [5, 3],
+        [4, 4],
+        [5, 4],
+        [4, 5],
+        [5, 5],
+        [1, 5],
+        [0, 5],
+        [2, 5],
+        [3, 5]
+      ],
+      "warn_beats": 2,
+      "duration_beats": 5
+    },
+    {
+      "beat": 79,
+      "type": "pulse",
+      "positions": [[0, 1]],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 80,
+      "type": "pulse",
+      "positions": [[0, 4]],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 81,
+      "type": "pulse",
+      "positions": [[1, 3]],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 82,
+      "type": "pulse",
+      "positions": [[2, 2]],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 83,
+      "type": "pulse",
+      "positions": [[3, 1]],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 85,
+      "type": "pulse",
+      "positions": [
+        [0, 0],
+        [0, 1],
+        [0, 2],
+        [5, 4],
+        [5, 3],
+        [5, 5],
+        [4, 3],
+        [1, 2]
+      ],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 87,
+      "type": "pulse",
+      "positions": [
+        [0, 5],
+        [0, 4],
+        [0, 3],
+        [1, 3],
+        [5, 0],
+        [5, 1],
+        [5, 2],
+        [4, 2]
+      ],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 89,
+      "type": "pulse",
+      "positions": [
+        [2, 0],
+        [1, 0],
+        [2, 1],
+        [5, 3],
+        [4, 3],
+        [5, 4]
+      ],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 91,
+      "type": "pulse",
+      "positions": [
+        [0, 1],
+        [0, 2],
+        [1, 2],
+        [3, 4],
+        [3, 5],
+        [4, 5]
+      ],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 93,
+      "type": "pulse",
+      "positions": [
+        [1, 4],
+        [1, 3],
+        [1, 2],
+        [1, 1],
+        [4, 1],
+        [4, 2],
+        [4, 3],
+        [4, 4]
+      ],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 95,
+      "type": "pulse",
+      "positions": [
+        [0, 3],
+        [1, 3],
+        [2, 3],
+        [3, 2],
+        [4, 2],
+        [5, 2]
+      ],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 96,
+      "type": "lock",
+      "positions": [
+        [0, 0],
+        [1, 0],
+        [2, 0],
+        [3, 0],
+        [4, 0],
+        [5, 0],
+        [0, 5],
+        [1, 5],
+        [2, 5],
+        [3, 5],
+        [4, 5],
+        [5, 5]
+      ],
+      "warn_beats": 1,
+      "duration_beats": 8
+    },
+    {
+      "beat": 97,
+      "type": "pulse",
+      "positions": [
+        [0, 1],
+        [1, 1],
+        [2, 1],
+        [3, 1],
+        [4, 1],
+        [5, 1],
+        [0, 4],
+        [1, 4],
+        [2, 4],
+        [3, 4],
+        [4, 4],
+        [5, 4]
+      ],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 99,
+      "type": "lock",
+      "positions": [
+        [0, 1],
+        [1, 1],
+        [2, 1],
+        [3, 1],
+        [4, 1],
+        [5, 1],
+        [5, 4],
+        [4, 4],
+        [3, 4],
+        [2, 4],
+        [1, 4],
+        [0, 4]
+      ],
+      "warn_beats": 1,
+      "duration_beats": 5
+    },
+    {
+      "beat": 101,
+      "type": "pulse",
+      "positions": [
+        [0, 2],
+        [0, 3],
+        [5, 2],
+        [5, 3],
+        [1, 2],
+        [1, 3],
+        [4, 2],
+        [4, 3]
+      ],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 103,
+      "type": "lock",
+      "positions": [
+        [0, 2],
+        [0, 3],
+        [5, 2],
+        [5, 3],
+        [1, 2],
+        [1, 3],
+        [4, 2],
+        [4, 3]
+      ],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 105,
+      "type": "lock",
+      "positions": [
+        [0, 0],
+        [0, 1],
+        [1, 1],
+        [1, 0],
+        [2, 0],
+        [2, 1],
+        [3, 1],
+        [3, 0],
+        [4, 0],
+        [4, 1],
+        [5, 1],
+        [5, 0]
+      ],
+      "warn_beats": 1,
+      "duration_beats": 6
+    },
+    {
+      "beat": 107,
+      "type": "lock",
+      "positions": [
+        [0, 4],
+        [0, 5],
+        [1, 5],
+        [1, 4],
+        [2, 4],
+        [2, 5],
+        [3, 5],
+        [3, 4],
+        [4, 4],
+        [4, 5],
+        [5, 5],
+        [5, 4]
+      ],
+      "warn_beats": 1,
+      "duration_beats": 4
+    },
+    {
+      "beat": 109,
+      "type": "pulse",
+      "positions": [
+        [0, 2],
+        [1, 3],
+        [1, 2],
+        [2, 2]
+      ],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 110,
+      "type": "pulse",
+      "positions": [
+        [3, 2],
+        [4, 2],
+        [5, 2],
+        [4, 3]
+      ],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 113,
+      "type": "pulse",
+      "positions": [
+        [0, 0],
+        [1, 1],
+        [2, 2],
+        [3, 3],
+        [4, 4],
+        [5, 5]
+      ],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 115,
+      "type": "pulse",
+      "positions": [
+        [0, 5],
+        [1, 4],
+        [2, 3],
+        [3, 2],
+        [4, 1],
+        [5, 0]
+      ],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 117,
+      "type": "pulse",
+      "positions": [
+        [0, 0],
+        [1, 1],
+        [2, 2],
+        [3, 3],
+        [4, 4],
+        [5, 5]
+      ],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 119,
+      "type": "pulse",
+      "positions": [
+        [0, 5],
+        [1, 4],
+        [2, 3],
+        [3, 2],
+        [4, 1],
+        [5, 0]
+      ],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 121,
+      "type": "pulse",
+      "positions": [
+        [2, 3],
+        [3, 2],
+        [2, 2],
+        [3, 3]
+      ],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 123,
+      "type": "lock",
+      "positions": [
+        [0, 0],
+        [1, 0],
+        [2, 0],
+        [3, 0],
+        [4, 0],
+        [5, 0],
+        [0, 5],
+        [1, 5],
+        [2, 5],
+        [3, 5],
+        [4, 5],
+        [5, 5]
+      ],
+      "warn_beats": 2,
+      "duration_beats": 10
+    },
+    {
+      "beat": 125,
+      "type": "pulse",
+      "positions": [
+        [2, 2],
+        [1, 3],
+        [0, 2]
+      ],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 126,
+      "type": "pulse",
+      "positions": [
+        [3, 2],
+        [4, 3],
+        [5, 2]
+      ],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 128,
+      "type": "chord",
+      "positions": [[0, 2]],
+      "warn_beats": 1,
+      "duration_beats": 6,
+      "direction": [1, 0]
+    },
+    {
+      "beat": 128,
+      "type": "chord",
+      "positions": [[5, 3]],
+      "warn_beats": 1,
+      "duration_beats": 6,
+      "direction": [-1, 0]
+    },
+    {
+      "beat": 135,
+      "type": "lock",
+      "positions": [
+        [0, 0],
+        [1, 0],
+        [2, 0],
+        [3, 0],
+        [4, 0],
+        [5, 0],
+        [0, 1],
+        [1, 1],
+        [4, 1],
+        [5, 1],
+        [0, 4],
+        [0, 5],
+        [1, 5],
+        [1, 4],
+        [2, 5],
+        [3, 5],
+        [4, 4],
+        [4, 5],
+        [5, 5],
+        [5, 4]
+      ],
+      "warn_beats": 2,
+      "duration_beats": 8
+    },
+    {
+      "beat": 137,
+      "type": "pulse",
+      "positions": [
+        [3, 4],
+        [2, 3],
+        [3, 3],
+        [2, 4]
+      ],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 139,
+      "type": "pulse",
+      "positions": [
+        [2, 1],
+        [2, 2],
+        [3, 1],
+        [3, 2]
+      ],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 141,
+      "type": "pulse",
+      "positions": [
+        [0, 2],
+        [0, 3],
+        [1, 3],
+        [1, 2]
+      ],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 142,
+      "type": "pulse",
+      "positions": [
+        [4, 2],
+        [4, 3],
+        [5, 3],
+        [5, 2]
+      ],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 145,
+      "type": "lock",
+      "positions": [
+        [0, 0],
+        [0, 1],
+        [0, 2],
+        [0, 3],
+        [0, 4],
+        [0, 5],
+        [5, 0],
+        [5, 1],
+        [5, 2],
+        [5, 3],
+        [5, 4],
+        [5, 5]
+      ],
+      "warn_beats": 2,
+      "duration_beats": 8
+    },
+    {
+      "beat": 147,
+      "type": "pulse",
+      "positions": [
+        [2, 5],
+        [3, 5],
+        [1, 0],
+        [4, 0],
+        [1, 5],
+        [4, 5],
+        [1, 1],
+        [2, 0],
+        [3, 0],
+        [4, 1],
+        [1, 4],
+        [4, 4]
+      ],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 149,
+      "type": "chord",
+      "positions": [[1, 2]],
+      "warn_beats": 1,
+      "duration_beats": 4,
+      "direction": [1, 0]
+    },
+    {
+      "beat": 149,
+      "type": "chord",
+      "positions": [[4, 3]],
+      "warn_beats": 1,
+      "duration_beats": 4,
+      "direction": [-1, 0]
+    },
+    {
+      "beat": 151,
+      "type": "pulse",
+      "positions": [
+        [1, 0],
+        [2, 0],
+        [3, 0],
+        [4, 0],
+        [2, 5],
+        [3, 5],
+        [4, 5],
+        [1, 5]
+      ],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 155,
+      "type": "lock",
+      "positions": [
+        [0, 4],
+        [0, 5],
+        [1, 4],
+        [1, 5],
+        [4, 0],
+        [4, 1],
+        [5, 0],
+        [5, 1],
+        [2, 5],
+        [3, 5],
+        [4, 5],
+        [5, 5],
+        [0, 0],
+        [1, 0],
+        [2, 0],
+        [3, 0],
+        [0, 1],
+        [0, 3],
+        [0, 2],
+        [5, 2],
+        [5, 3],
+        [5, 4]
+      ],
+      "warn_beats": 2,
+      "duration_beats": 5
+    },
+    {
+      "beat": 157,
+      "type": "chord",
+      "positions": [[2, 2]],
+      "warn_beats": 1,
+      "duration_beats": 2,
+      "direction": [0, -1]
+    },
+    {
+      "beat": 157,
+      "type": "chord",
+      "positions": [[3, 3]],
+      "warn_beats": 1,
+      "duration_beats": 2,
+      "direction": [0, 1]
+    },
+    {
+      "beat": 161,
+      "type": "pulse",
+      "positions": [
+        [2, 2],
+        [3, 3],
+        [0, 0],
+        [5, 5],
+        [4, 4],
+        [1, 1]
+      ],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 163,
+      "type": "chord",
+      "positions": [[2, 3]],
+      "warn_beats": 1,
+      "duration_beats": 3,
+      "direction": [-1, 0]
+    },
+    {
+      "beat": 163,
+      "type": "chord",
+      "positions": [[3, 2]],
+      "warn_beats": 1,
+      "duration_beats": 3,
+      "direction": [1, 0]
+    },
+    {
+      "beat": 163,
+      "type": "pulse",
+      "positions": [
+        [1, 4],
+        [0, 5],
+        [4, 1],
+        [5, 0]
+      ],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 165,
+      "type": "lock",
+      "positions": [
+        [0, 0],
+        [1, 0],
+        [2, 0],
+        [3, 0],
+        [4, 0],
+        [5, 0],
+        [0, 5],
+        [1, 5],
+        [2, 5],
+        [3, 5],
+        [4, 5],
+        [5, 5]
+      ],
+      "warn_beats": 1,
+      "duration_beats": 3
+    },
+    {
+      "beat": 167,
+      "type": "pulse",
+      "positions": [
+        [0, 2],
+        [5, 3],
+        [0, 3],
+        [0, 4],
+        [5, 2],
+        [5, 1],
+        [4, 1],
+        [1, 4],
+        [3, 1],
+        [2, 4]
+      ],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 169,
+      "type": "pulse",
+      "positions": [
+        [0, 0],
+        [1, 1],
+        [2, 2],
+        [3, 2],
+        [4, 1],
+        [5, 0]
+      ],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 171,
+      "type": "pulse",
+      "positions": [
+        [0, 5],
+        [1, 4],
+        [2, 3],
+        [3, 3],
+        [4, 4],
+        [5, 5]
+      ],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 172,
+      "type": "pulse",
+      "positions": [
+        [0, 0],
+        [1, 0],
+        [2, 0],
+        [1, 1],
+        [1, 2]
+      ],
+      "warn_beats": 1,
+      "duration_beats": 1
+    },
+    {
+      "beat": 174,
+      "type": "pulse",
+      "positions": [
+        [3, 5],
+        [5, 5],
+        [4, 5],
+        [4, 4],
+        [4, 3]
+      ],
+      "warn_beats": 1,
+      "duration_beats": 1
+    }
+  ]
+}

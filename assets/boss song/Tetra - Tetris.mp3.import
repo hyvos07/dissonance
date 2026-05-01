@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://77wgbpf1y0qg"
+path="res://.godot/imported/Tetra - Tetris.mp3-7cd7b1ba8d5496ade3584767891dfc83.mp3str"
+
+[deps]
+
+source_file="res://assets/boss song/Tetra - Tetris.mp3"
+dest_files=["res://.godot/imported/Tetra - Tetris.mp3-7cd7b1ba8d5496ade3584767891dfc83.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

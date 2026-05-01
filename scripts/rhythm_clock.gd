@@ -13,6 +13,8 @@ signal bpm_changed(new_bpm: float)
 var _fallback_elapsed_seconds: float = 0.0
 var _last_emitted_beat: int = -1
 var _running: bool = false
+var _paused: bool = false
+var _pause_position: float = 0.0
 var _last_bpm: float = -1.0
 
 ## Optional LevelData resource for dynamic BPM and trap data.
@@ -41,8 +43,33 @@ func start(reset_beat: bool = true) -> void:
 
 func stop() -> void:
 	_running = false
+	_paused = false
 	if _music_player.playing:
 		_music_player.stop()
+
+
+func pause() -> void:
+	if not _running or _paused:
+		return
+	_paused = true
+	_running = false
+	_pause_position = get_song_position_seconds()
+	if _music_player.playing:
+		_music_player.stop()
+
+
+func resume() -> void:
+	if not _paused:
+		return
+	_paused = false
+	_running = true
+	_fallback_elapsed_seconds = _pause_position
+	if _music_player.stream != null:
+		_music_player.play(_pause_position)
+
+
+func is_paused() -> bool:
+	return _paused
 
 
 ## Get current BPM — uses LevelData if available, else static export.

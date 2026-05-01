@@ -1,0 +1,50 @@
+~ epilog
+
+do set_background("perpustakaan_malam")
+do show_character("suis", "left")
+do show_character("buna", "right")
+do fade_in()
+
+Suis: Ibu kenal mereka sejak dulu?
+
+Buna: Aku mengenal musiknya. Itu sama saja.
+
+Suis: Itu apa?
+
+Buna: Sesuatu yang tidak pernah aku selesaikan.
+
+Buna: Aku pernah ingin menjadi komposer. Waktu itu, dunia belum sepenuhnya lupa. Musik masih punya sedikit nyawa.
+
+Suis: Kenapa berhenti?
+
+Buna: Karena aku pikir tidak ada gunanya. Siapa yang mau mendengar?
+
+do dramatic_pause(1.5)
+
+Buna: Tapi rupanya ada.
+
+Suis: Ini...?
+
+Buna: Mau tidak, bantu aku menyelesaikan ini? Waktuku tidak banyak lagi. Tapi mungkin waktumu masih panjang.
+
+Suis: ...saya bahkan belum bisa membaca not balok dengan benar.
+
+Buna: Aku tahu. Makanya aku yang akan mengajarimu.
+
+Suis: ...oke.
+
+do hide_character("suis")
+do hide_character("buna")
+do fade_to_black()
+do dramatic_pause(2.0)
+
+NARASI: Di luar, dunia masih abu-abu. #narasi
+
+NARASI: Tapi di suatu sudut yang kecil, musik sedang dibuat. #narasi
+
+NARASI: Bukan untuk fungsi. Bukan untuk efisiensi. #narasi
+
+NARASI: Hanya untuk dirasakan. #narasi
+
+do end_chapter("epilog")
+=> END

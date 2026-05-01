@@ -1,0 +1,44 @@
+~ klimaks
+
+do set_background("perpustakaan_malam")
+do show_character("suis", "left")
+do show_character("buna", "right")
+do fade_in()
+
+Suis: Semuanya sudah ada.
+
+Buna: Ya. Semuanya sudah ada.
+
+Suis: Ibu baik-baik saja?
+
+Buna: Hanya... tidak menyangka hari ini benar-benar datang.
+
+do dramatic_pause(1.5)
+
+Buna: Berdirilah sedikit ke belakang.
+
+do hide_character("suis")
+do hide_character("buna")
+
+NARASI: Ketiga shard bergetar, saling menarik satu sama lain — lalu cahaya meluap. Bukan ledakan. Justru sebaliknya: cahaya yang pelan, hangat, seperti matahari terbit di dalam ruangan. #narasi
+
+NARASI: Melodi mengalun. Tidak sempurna, tidak teratur — tapi hidup. #narasi
+
+LUMEN: ...sudah lama.
+
+ARIA: Terlalu lama.
+
+TETRA: ...
+
+NARASI: Ketiganya memudar. Melodi masih mengalun pelan di udara. #narasi
+
+do show_character("suis", "left")
+do show_character("buna", "right")
+
+Suis: ...ibu menangis.
+
+Buna: Sudah sangat lama aku menunggu ini.
+
+do fade_to_black()
+do end_chapter("klimaks")
+=> END

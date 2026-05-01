@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dkpe06rv8hb50"
+path="res://.godot/imported/babak_pembuka.dialogue-b3234bab663d19e1d930745f6390981d.tres"
+
+[deps]
+
+source_file="res://dialogue/babak_pembuka.dialogue"
+dest_files=["res://.godot/imported/babak_pembuka.dialogue-b3234bab663d19e1d930745f6390981d.tres"]
+
+[params]
+
+defaults=true

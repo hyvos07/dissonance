@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameManager="*res://scripts/game_manager.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 [display]
 
@@ -27,10 +28,18 @@ window/size/mode=4
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+
 [gui]
 
 theme/custom="res://assets/ui_theme.tres"
 theme/custom_font="res://assets/ZT_nature_Font/ZT Nature - TT/ZTNature-Bold.ttf"
+
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://dialogue/babak_1_lumen.dialogue", "res://dialogue/babak_2_aria.dialogue", "res://dialogue/babak_3_tetra.dialogue", "res://dialogue/babak_pembuka.dialogue", "res://dialogue/epilog.dialogue", "res://dialogue/klimaks.dialogue", "res://dialogue/prolog.dialogue")
 
 [physics]
 

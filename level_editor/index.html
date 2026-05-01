@@ -587,6 +587,13 @@ body {
 
 .grid-cell.has-chord .cell-icon { color: var(--chord-cyan); }
 
+.grid-cell.has-warning {
+  border-color: var(--pulse-yellow);
+  background: rgba(255, 216, 102, 0.18);
+}
+
+.grid-cell.has-warning .cell-icon { color: var(--pulse-yellow); }
+
 .cell-icon {
   font-size: 16px;
   pointer-events: none;
@@ -1532,7 +1539,7 @@ function refreshGridHighlights() {
     const y = parseInt(cell.dataset.y);
     const key = `${x},${y}`;
 
-    cell.classList.remove('selected', 'has-pulse', 'has-lock', 'has-chord');
+    cell.classList.remove('selected', 'has-pulse', 'has-lock', 'has-chord', 'has-warning');
     const icon = cell.querySelector('.cell-icon');
     icon.textContent = '';
 
@@ -1542,10 +1549,15 @@ function refreshGridHighlights() {
 
     const tc = trapCells[key];
     if (tc) {
-      cell.classList.add(`has-${tc.type}`);
-      if (tc.type === 'pulse') icon.textContent = tc.phase === 'warn' ? '⚠' : '💥';
-      else if (tc.type === 'lock') icon.textContent = '🔒';
-      else if (tc.type === 'chord') icon.textContent = tc.phase === 'warn' ? '⚠' : '🎵';
+      if (tc.phase === 'warn') {
+        cell.classList.add('has-warning');
+        icon.textContent = '⚠';
+      } else {
+        cell.classList.add(`has-${tc.type}`);
+        if (tc.type === 'pulse') icon.textContent = '💥';
+        else if (tc.type === 'lock') icon.textContent = '🔒';
+        else if (tc.type === 'chord') icon.textContent = '🎵';
+      }
     }
   });
 }

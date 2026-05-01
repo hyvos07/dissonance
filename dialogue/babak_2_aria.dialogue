@@ -1,0 +1,74 @@
+~ pencarian_aria
+
+do set_background("perpustakaan_siang")
+do show_character("suis", "left")
+do show_character("buna", "right")
+do fade_in()
+
+Buna: LUMEN. Sudah lama sekali.
+
+Suis: Ibu kenal mereka?
+
+Buna: Dulu, aku mengenal semua musik yang pernah ada. Sekarang, hanya ingatan yang tersisa.
+
+Buna: Yang berikutnya lebih pendiam. Tapi jangan salah sangka — ia justru yang paling keras tuntutannya.
+
+Suis: Tempat di mana benda memantul itu disimpan, setelah dipakai seharian untuk dilempar ke udara...
+
+Suis: ...lapangan basket?
+
+do hide_character("buna")
+do set_background("gudang_olahraga")
+do move_character("suis", "center")
+
+Suis: Ketemu.
+
+NARASI: Shard itu tidak meledak. Ia hanya... bergetar. Pelan. Teratur. Seperti metronom. #narasi
+
+do screen_shake()
+do fade_to_black()
+=> pertarungan_aria
+
+~ pertarungan_aria
+
+do fade_in()
+
+ARIA: Kamu yang membangunkan kami.
+
+Suis: Ya. Saya—
+
+ARIA: Postur buruk. Napas tidak teratur. Kamu belum pernah benar-benar berlatih musik, bukan?
+
+Suis: Saya baru mulai—
+
+ARIA: Semua orang selalu 'baru mulai.' Lalu berhenti sebelum selesai. Dunia ini penuh dengan hal yang tidak pernah selesai.
+
+do dramatic_pause(1.0)
+
+Suis: Saya tidak akan berhenti.
+
+ARIA: ...kita lihat.
+
+ARIA: Aku tidak akan memberi kelonggaran. Musik yang benar tidak mengenal belas kasihan terhadap kecerobohan.
+
+do start_boss_fight("ARIA")
+=> END
+
+~ pasca_aria
+
+do fade_in()
+do show_character("suis", "center")
+
+ARIA: Kamu bermain tidak sempurna.
+
+Suis: Saya tahu—
+
+ARIA: Tapi kamu bermain dengan sungguh-sungguh. Itu hal yang berbeda.
+
+ARIA: ...di zaman ini, itu sudah cukup langka untuk diapresiasi.
+
+NARASI: Shard berpendar. ARIA memudar. #narasi
+
+do fade_to_black()
+do end_chapter("babak_2_aria")
+=> END

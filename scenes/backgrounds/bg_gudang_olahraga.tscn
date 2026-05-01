@@ -1,0 +1,20 @@
+[gd_scene format=3]
+
+[node name="BGGudangOlahraga" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.06, 0.04, 0.04, 1)
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -200.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 36.0
+theme_override_colors/font_color = Color(0.5, 0.6, 0.7, 0.4)
+theme_override_font_sizes/font_size = 14
+text = "Gudang Olahraga"
+horizontal_alignment = 2

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bn1wjsds4wern"
+path="res://.godot/imported/babak_2_aria.dialogue-774c47bbf4e44e65afe279561850316e.tres"
+
+[deps]
+
+source_file="res://dialogue/babak_2_aria.dialogue"
+dest_files=["res://.godot/imported/babak_2_aria.dialogue-774c47bbf4e44e65afe279561850316e.tres"]
+
+[params]
+
+defaults=true

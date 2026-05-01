@@ -3,7 +3,7 @@
 class_name ArenaState
 extends RefCounted
 
-enum TileState { EMPTY, WARNING, DANGER, LOCKED }
+enum TileState { EMPTY, WARNING, DANGER, LOCKED, CHORD_DANGER, WARNING_LOCK, WARNING_CHORD }
 
 signal tile_state_changed(pos: Vector2i, old_state: int, new_state: int)
 
@@ -45,7 +45,7 @@ func get_tile_state(pos: Vector2i) -> int:
 
 func is_dangerous(pos: Vector2i) -> bool:
 	var s: int = get_tile_state(pos)
-	return s == TileState.DANGER
+	return s == TileState.DANGER or s == TileState.CHORD_DANGER
 
 
 func is_locked(pos: Vector2i) -> bool:

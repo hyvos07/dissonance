@@ -1,62 +1,76 @@
-[gd_scene format=3 uid="uid://cmainmenuscene"]
+[gd_scene format=3 uid="uid://cyc8taatiavh3"]
 
-[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_menu"]
+[ext_resource type="Script" uid="uid://dkrv1ttx0utic" path="res://scripts/main_menu.gd" id="1_menu"]
 [ext_resource type="Theme" path="res://assets/ui_theme.tres" id="2_theme"]
+[ext_resource type="VideoStream" uid="uid://cr2o8n2dc46y3" path="res://assets/bg.ogv" id="3_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://b3xnw2op5x82b" path="res://assets/titel.png" id="4_title"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
-bg_color = Color(0.04, 0.02, 0.08, 1)
+bg_color = Color(0.02, 0.04, 0.1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_normal"]
-bg_color = Color(0.12, 0.06, 0.2, 0.9)
+bg_color = Color(0.06, 0.1, 0.2, 0.9)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0.55, 0.3, 0.85, 0.8)
+border_color = Color(0.3, 0.5, 0.85, 0.8)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
-shadow_color = Color(0.4, 0.15, 0.7, 0.3)
+shadow_color = Color(0.15, 0.3, 0.7, 0.3)
 shadow_size = 6
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_hover"]
-bg_color = Color(0.2, 0.1, 0.35, 0.95)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_pressed"]
+bg_color = Color(0.15, 0.25, 0.5, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0.7, 0.4, 1.0, 1.0)
+border_color = Color(0.55, 0.75, 1, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
-shadow_color = Color(0.5, 0.2, 0.9, 0.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_hover"]
+bg_color = Color(0.1, 0.18, 0.35, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.4, 0.65, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0.2, 0.4, 0.9, 0.5)
 shadow_size = 10
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_pressed"]
-bg_color = Color(0.3, 0.15, 0.5, 1.0)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.85, 0.55, 1.0, 1.0)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_disabled"]
-bg_color = Color(0.06, 0.04, 0.1, 0.5)
+bg_color = Color(0.04, 0.06, 0.1, 0.5)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(0.25, 0.15, 0.35, 0.3)
+border_color = Color(0.15, 0.2, 0.35, 0.3)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_options_panel"]
+bg_color = Color(0.04, 0.06, 0.14, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.3, 0.5, 0.85, 0.6)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -66,10 +80,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_theme")
-theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
 script = ExtResource("1_menu")
+bg_video = ExtResource("3_bqqt6")
 
 [node name="BG" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0.38039216)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -86,69 +101,167 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -200.0
-offset_top = -200.0
+offset_top = -260.0
 offset_right = 200.0
-offset_bottom = 200.0
+offset_bottom = 260.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 14
+alignment = 1
 
-[node name="Title" type="Label" parent="VBoxContainer"]
+[node name="Title" type="TextureRect" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.85, 0.75, 1.0, 1.0)
-theme_override_font_sizes/font_size = 52
-text = "DISSONANCE"
-horizontal_alignment = 1
+texture = ExtResource("4_title")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Subtitle" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.55, 0.45, 0.7, 0.7)
-theme_override_font_sizes/font_size = 16
-text = "Choose your opponent"
+theme_override_colors/font_color = Color(0.45, 0.6, 0.8, 0.7)
+theme_override_font_sizes/font_size = 14
+text = "One arena. One boss. One song that decides everything."
 horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="Spacer" type="Control" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="LumenButton" type="Button" parent="VBoxContainer"]
-custom_minimum_size = Vector2(340, 56)
+[node name="StoryButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(380, 56)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_colors/font_color = Color(1.0, 0.92, 0.5, 1.0)
-theme_override_colors/font_hover_color = Color(1.0, 0.96, 0.7, 1.0)
-theme_override_colors/font_disabled_color = Color(0.4, 0.35, 0.25, 0.4)
+theme_override_colors/font_color = Color(0.95, 0.9, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 0.96, 1, 1)
 theme_override_font_sizes/font_size = 22
 theme_override_styles/normal = SubResource("StyleBoxFlat_btn_normal")
-theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_pressed")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_btn_disabled")
-text = "⚡  LUMEN  ⚡"
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
+text = "New Story"
 
-[node name="AriaButton" type="Button" parent="VBoxContainer"]
-custom_minimum_size = Vector2(340, 56)
+[node name="ContinueButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(380, 56)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0.7, 0.85, 1.0, 1.0)
-theme_override_colors/font_hover_color = Color(0.85, 0.92, 1.0, 1.0)
-theme_override_colors/font_disabled_color = Color(0.3, 0.35, 0.45, 0.4)
+theme_override_colors/font_color = Color(0.7, 0.88, 1.0, 1)
+theme_override_colors/font_hover_color = Color(0.85, 0.95, 1, 1)
 theme_override_font_sizes/font_size = 22
 theme_override_styles/normal = SubResource("StyleBoxFlat_btn_normal")
-theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_pressed")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_btn_disabled")
-text = "♪  ARIA  ♪"
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
+text = "Continue Story"
 
-[node name="TetraButton" type="Button" parent="VBoxContainer"]
-custom_minimum_size = Vector2(340, 56)
+[node name="FreePlayButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(380, 56)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0.4, 1.0, 0.85, 1.0)
-theme_override_colors/font_hover_color = Color(0.6, 1.0, 0.9, 1.0)
-theme_override_colors/font_disabled_color = Color(0.2, 0.4, 0.35, 0.4)
+theme_override_colors/font_color = Color(0.7, 0.85, 1, 1)
+theme_override_colors/font_hover_color = Color(0.85, 0.92, 1, 1)
+theme_override_colors/font_disabled_color = Color(0.3, 0.4, 0.5, 0.4)
 theme_override_font_sizes/font_size = 22
 theme_override_styles/normal = SubResource("StyleBoxFlat_btn_normal")
-theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_btn_disabled")
-text = "✦  TETRA  ✦"
+text = "Free Play"
+
+[node name="OptionsButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(380, 56)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.7, 0.7, 0.8, 1)
+theme_override_colors/font_hover_color = Color(0.85, 0.85, 1, 1)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_normal")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
+text = "Options"
+
+[node name="ExitButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(380, 56)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.8, 0.4, 0.4, 1)
+theme_override_colors/font_hover_color = Color(1, 0.5, 0.5, 1)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_normal")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
+text = "Exit"
+
+[node name="OptionsPanel" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.0
+offset_top = -150.0
+offset_right = 220.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_options_panel")
+
+[node name="Margin" type="MarginContainer" parent="OptionsPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBox" type="VBoxContainer" parent="OptionsPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="OptionsTitle" type="Label" parent="OptionsPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.75, 0.88, 1, 1)
+theme_override_font_sizes/font_size = 28
+text = "Options"
+horizontal_alignment = 1
+
+[node name="MasterVolLabel" type="Label" parent="OptionsPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.65, 0.75, 0.9, 0.9)
+theme_override_font_sizes/font_size = 16
+text = "Master Volume"
+
+[node name="MasterVolSlider" type="HSlider" parent="OptionsPanel/Margin/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+value = 80.0
+
+[node name="MusicVolLabel" type="Label" parent="OptionsPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.65, 0.75, 0.9, 0.9)
+theme_override_font_sizes/font_size = 16
+text = "Music Volume"
+
+[node name="MusicVolSlider" type="HSlider" parent="OptionsPanel/Margin/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+value = 80.0
+
+[node name="BackButton" type="Button" parent="OptionsPanel/Margin/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 44)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.7, 0.7, 0.8, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_normal")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
+text = "Back"

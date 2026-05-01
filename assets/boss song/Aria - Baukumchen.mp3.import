@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bcu4xm07g7j51"
+path="res://.godot/imported/Aria - Baukumchen.mp3-3a3fa9b38dd64b64874ec3b6d755e6ee.mp3str"
+
+[deps]
+
+source_file="res://assets/boss song/Aria - Baukumchen.mp3"
+dest_files=["res://.godot/imported/Aria - Baukumchen.mp3-3a3fa9b38dd64b64874ec3b6d755e6ee.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

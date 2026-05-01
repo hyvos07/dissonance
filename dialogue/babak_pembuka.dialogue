@@ -1,0 +1,70 @@
+~ babak_pembuka
+
+do set_background("perpustakaan_siang")
+do show_character("suis", "center")
+do fade_in()
+
+NARASI: Ia kembali. Ia sendiri tidak mengerti mengapa. #narasi
+
+do show_character("buna", "right")
+do move_character("suis", "left")
+
+Buna: Kamu yang kemarin, ya?
+
+Suis: Eh— maaf, apa saya mengganggu—
+
+Buna: Tidak. Sudah lama tidak ada yang mampir ke sini dua hari berturut-turut.
+
+Buna: Rekaman itu yang membuatmu menangis?
+
+Suis: Ibu tahu?
+
+Buna: Kamu bukan yang pertama. Tapi kamu mungkin yang pertama yang datang lagi keesokan harinya.
+
+do dramatic_pause(1.0)
+
+Suis: ...lagu itu apa? Siapa yang membuatnya?
+
+Buna: Seseorang yang sudah lama tidak diingat namanya. Itulah masalahnya.
+
+Suis: Masalah?
+
+Buna: Dunia ini tidak hanya kehilangan musiknya, Suis. Ia kehilangan ingatannya tentang apa itu musik.
+
+Buna: Ada sesuatu yang terjadi ketika musik dilupakan. Energi yang seharusnya mengalir... mengendap. Membusuk. Dan akhirnya—
+
+Suis: Jadi apa?
+
+Buna: Dissonant.
+
+do screen_shake()
+
+Buna: Entitas yang lahir dari melodi yang mati sebelum sempat didengar. Selama ini mereka diam. Tapi kemarin malam, ketika kamu mencoba memainkan sesuatu di gudang sekolah—
+
+Suis: Ibu tahu soal itu juga?
+
+Buna: Perpustakaan ini menyimpan banyak hal yang orang tidak sangka.
+
+do dramatic_pause(1.0)
+
+Buna: Mereka terbangun, Suis. Musikmu membangunkan mereka.
+
+Suis: Saya... tidak bermaksud—
+
+Buna: Aku tahu. Dan mereka pun tidak bermaksud mengganggu. Mereka hanya terluka. Sudah sangat lama.
+
+Suis: Lalu apa yang harus saya lakukan?
+
+Buna: Pecahan mereka tersebar di sekitar sekolah ini. Temukan. Bawa kembali ke sini.
+
+Suis: Semudah itu?
+
+Buna: Tidak. Mereka tidak akan menyerah begitu saja. Kamu harus menghadapi mereka — dengan ritme, bukan kekerasan. Dengarkan musiknya. Ikuti ketukannya. Itu satu-satunya cara.
+
+Suis: ...oke. Mulai dari mana?
+
+Buna: Ini petunjuk pertamaku.
+
+do fade_to_black()
+do end_chapter("babak_pembuka")
+=> END

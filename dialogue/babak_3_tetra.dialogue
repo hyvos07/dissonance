@@ -1,0 +1,84 @@
+~ pencarian_tetra
+
+do set_background("perpustakaan_siang")
+do show_character("suis", "left")
+do show_character("buna", "right")
+do fade_in()
+
+Buna: ARIA. Ia selalu keras kepala.
+
+Suis: Dia bilang saya bermain tidak sempurna.
+
+Buna: Ia bilang hal yang sama padaku, lima puluh tahun lalu.
+
+Suis: Ibu juga pernah—
+
+Buna: Yang terakhir ini berbeda dari keduanya. Berhati-hatilah.
+
+Suis: Tempat di mana air menggenang, sambil ditemani dirimu dari dunia di balik kaca...
+
+Suis: ...toilet?
+
+do hide_character("buna")
+do set_background("toilet_wanita")
+do move_character("suis", "center")
+
+Suis: Jumlah senar gitar... enam.
+
+NARASI: Bilik nomor enam. Suis membuka pintu — di sudut bawah, sebuah shard bergetar tidak menentu. Kadang berkedip cepat, kadang mati sejenak. #narasi
+
+Suis: Yang ini... gelisah ya.
+
+do screen_shake()
+do fade_to_black()
+=> pertarungan_tetra
+
+~ pertarungan_tetra
+
+do fade_in()
+
+TETRA: AKHIRNYA! Kupikir tidak ada yang mau mampir ke sini! Tau nggak berapa lama aku nunggu di toilet?!
+
+Suis: Eh— maaf, kamu—
+
+TETRA: TETRA! Dan kamu Suis kan? Aku udah denger soal kamu dari LUMEN! Katanya kamu lumayan!
+
+Suis: Lumayan...?
+
+TETRA: Itu pujian tertinggi dari LUMEN, percaya deh. Oke oke, langsung aja ya, aku nggak sabar—
+
+Suis: Tunggu— setidaknya jelaskan dulu—
+
+TETRA: EXPLAINING IS BORING! Ikuti aja ketukannya!
+
+do start_boss_fight("TETRA")
+=> END
+
+~ pasca_tetra
+
+do fade_in()
+do show_character("suis", "center")
+
+NARASI: Empat menit dua puluh detik. Suara yang pernah membuatnya menangis tanpa alasan. #narasi
+
+NARASI: Ia ingat mengapa ia di sini. #narasi
+
+TETRA: Hahh... hahh... kamu beneran lumayan.
+
+Suis: Kamu... jahat banget.
+
+TETRA: Aku cuma lagi seneng. Sudah lamaaaa banget nggak ada yang mau main sama aku.
+
+do dramatic_pause(1.5)
+
+TETRA: ...di mana semua orang pergi, sih? Dulu rame banget.
+
+Suis: Mereka lupa.
+
+TETRA: ...iya. Kayaknya gitu.
+
+NARASI: Shard berpendar. TETRA memudar — tapi sebelum benar-benar hilang, ia melambaikan tangan sekali. #narasi
+
+do fade_to_black()
+do end_chapter("babak_3_tetra")
+=> END

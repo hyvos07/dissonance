@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://xrcm34345igb"
+path="res://.godot/imported/prolog.dialogue-573122bd4a55fa2aecb34c59b94825ac.tres"
+
+[deps]
+
+source_file="res://dialogue/prolog.dialogue"
+dest_files=["res://.godot/imported/prolog.dialogue-573122bd4a55fa2aecb34c59b94825ac.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cus5qx5ppdlpq"
+path="res://.godot/imported/Inst_bpm125_0vu=-18dbfs.wav-9310fce57427f7927bf7b84a52ece47f.sample"
+
+[deps]
+
+source_file="res://assets/boss song/baukumhen/AudioRaw/Inst_bpm125_0vu=-18dbfs.wav"
+dest_files=["res://.godot/imported/Inst_bpm125_0vu=-18dbfs.wav-9310fce57427f7927bf7b84a52ece47f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

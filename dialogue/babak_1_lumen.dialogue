@@ -1,0 +1,61 @@
+~ pencarian_lumen
+
+do set_background("koridor")
+do show_character("suis", "center")
+do fade_in()
+
+Suis: Tempat di mana kamu duduk setiap belajar, tempat di mana kamu harus menahan kantuk di setiap pagi...
+
+Suis: ...kelas?
+
+do set_background("kelas_12b")
+
+Suis: Di sini kah...?
+
+NARASI: Cahaya redup bersinar dari bawah laci. Suis menarik tangannya — di telapaknya ada shard kecil yang hangat, berkilauan seperti lampu neon. #narasi
+
+Suis: ...cantik.
+
+do screen_shake()
+do fade_to_black()
+=> pertarungan_lumen
+
+~ pertarungan_lumen
+
+do fade_in()
+
+LUMEN: OH! Akhirnya ada yang menemukanku! Sudah berapa lama aku di sini— seratus tahun? Dua ratus?
+
+Suis: Kamu... siapa?
+
+LUMEN: LUMEN! Dan kamu pasti yang membangunkan kami semua! Aku dengar musikmu, lho!
+
+Suis: Ibu Buna bilang aku harus membawamu kembali ke perpustakaan—
+
+LUMEN: Tentu saja. Tapi kamu harus buktikan dulu kalau kamu layak. Aku tidak mau dipegang sembarang orang.
+
+LUMEN: Ikuti ketukannya. Kalau kamu bisa bertahan — aku ikut bersamamu!
+
+do start_boss_fight("LUMEN")
+=> END
+
+~ pasca_lumen
+
+do fade_in()
+do show_character("suis", "center")
+
+LUMEN: ...kamu mendengarkan musikku sampai selesai.
+
+Suis: Ya.
+
+LUMEN: Sudah sangat lama tidak ada yang melakukan itu.
+
+do dramatic_pause(1.5)
+
+LUMEN: ...terima kasih.
+
+NARASI: Shard berdenyar. LUMEN memudar. Shard kembali ke tangan Suis — tapi kali ini terasa lebih hangat. #narasi
+
+do fade_to_black()
+do end_chapter("babak_1_lumen")
+=> END

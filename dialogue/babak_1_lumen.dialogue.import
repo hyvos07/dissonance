@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://c0b28m6afath0"
+path="res://.godot/imported/babak_1_lumen.dialogue-0bc82d9596fe872dc9255365ff23067c.tres"
+
+[deps]
+
+source_file="res://dialogue/babak_1_lumen.dialogue"
+dest_files=["res://.godot/imported/babak_1_lumen.dialogue-0bc82d9596fe872dc9255365ff23067c.tres"]
+
+[params]
+
+defaults=true
