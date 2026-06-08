@@ -23,6 +23,7 @@ const MUSIC_MAP: Dictionary = {
 	"LUMEN": "res://assets/boss song/Lumen - Neon Curtain Call.mp3",
 	"ARIA": "res://assets/boss song/Aria - Baukumchen.mp3",
 	"TETRA": "res://assets/boss song/Tetra - Tetris.mp3",
+	"???": "res://assets/boss song/Secret - Genie.mp3",
 }
 
 

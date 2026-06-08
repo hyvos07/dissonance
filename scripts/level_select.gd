@@ -6,6 +6,7 @@ const BOSS_LEVELS: Dictionary = {
 	"LUMEN": "res://levels/Lumen.json",
 	"ARIA": "res://levels/Aria.json",
 	"TETRA": "res://levels/Tetra.json",
+	"???": "res://levels/Secret.json",
 }
 
 ## Drag your background video (.ogv) here in the Inspector.
@@ -14,6 +15,7 @@ const BOSS_LEVELS: Dictionary = {
 @onready var _lumen_btn: Button = $VBoxContainer/LumenButton
 @onready var _aria_btn: Button = $VBoxContainer/AriaButton
 @onready var _tetra_btn: Button = $VBoxContainer/TetraButton
+@onready var _secret_btn: Button = $VBoxContainer/SecretButton
 @onready var _back_btn: Button = $VBoxContainer/BackButton
 
 const MENU_MUSIC_PATH: String = "res://assets/Empty Plaza Memory.mp3"
@@ -26,6 +28,7 @@ func _ready() -> void:
 	_setup_button(_lumen_btn, "LUMEN")
 	_setup_button(_aria_btn, "ARIA")
 	_setup_button(_tetra_btn, "TETRA")
+	_setup_free_mode_button(_secret_btn, "???")
 	_back_btn.pressed.connect(_on_back)
 
 
@@ -112,6 +115,14 @@ func _setup_button(btn: Button, boss_name: String) -> void:
 	btn.pressed.connect(_on_boss_selected.bind(boss_name, path))
 	if not exists:
 		btn.tooltip_text = "Level data not found"
+
+
+func _setup_free_mode_button(btn: Button, boss_name: String) -> void:
+	if GameManager.in_story_mode:
+		btn.visible = false
+		btn.disabled = true
+		return
+	_setup_button(btn, boss_name)
 
 
 func _on_boss_selected(boss_name: String, path: String) -> void:

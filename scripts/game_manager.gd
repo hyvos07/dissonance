@@ -76,6 +76,7 @@ func get_boss_level_path(boss_name: String) -> String:
 		"LUMEN": "res://levels/Lumen.json",
 		"ARIA": "res://levels/Aria.json",
 		"TETRA": "res://levels/Tetra.json",
+		"???": "res://levels/Secret.json",
 	}
 	return paths.get(boss_name, "")
 
