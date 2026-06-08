@@ -280,12 +280,15 @@ func _update_character_focus(speaker: String) -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and not event.echo:
 		if event.keycode == KEY_ESCAPE and not _is_overlay:
-			if _skip_overlay != null and is_instance_valid(_skip_overlay):
-				_skip_overlay.queue_free()
-				_skip_overlay = null
+			if _is_skip_prompt_open():
+				_close_skip_prompt()
 			else:
 				_show_skip_prompt()
+			get_viewport().set_input_as_handled()
 			return
+
+	if _is_skip_prompt_open():
+		return
 
 	# Accept input (click, space, enter)
 	var accepted: bool = false
@@ -313,6 +316,9 @@ func _input(event: InputEvent) -> void:
 
 
 func _show_skip_prompt() -> void:
+	if _is_skip_prompt_open():
+		return
+
 	# Simple skip confirmation
 	var overlay := ColorRect.new()
 	overlay.color = Color(0, 0, 0, 0.7)
@@ -343,7 +349,7 @@ func _show_skip_prompt() -> void:
 	resume_btn.custom_minimum_size = Vector2(220, 48)
 	resume_btn.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
 	resume_btn.add_theme_font_size_override("font_size", 20)
-	resume_btn.pressed.connect(func(): overlay.queue_free())
+	resume_btn.pressed.connect(_close_skip_prompt)
 	vbox.add_child(resume_btn)
 
 	var quit_btn := Button.new()
@@ -351,12 +357,26 @@ func _show_skip_prompt() -> void:
 	quit_btn.custom_minimum_size = Vector2(220, 48)
 	quit_btn.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
 	quit_btn.add_theme_font_size_override("font_size", 20)
-	quit_btn.pressed.connect(func():
-		GameManager.in_story_mode = false
-		GameManager.save_progress()
-		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
-	)
+	quit_btn.pressed.connect(_return_to_main_menu_from_skip_prompt)
 	vbox.add_child(quit_btn)
+
+
+func _is_skip_prompt_open() -> bool:
+	return _skip_overlay != null and is_instance_valid(_skip_overlay)
+
+
+func _close_skip_prompt() -> void:
+	if _is_skip_prompt_open():
+		_skip_overlay.queue_free()
+	_skip_overlay = null
+	get_viewport().set_input_as_handled()
+
+
+func _return_to_main_menu_from_skip_prompt() -> void:
+	_close_skip_prompt()
+	GameManager.in_story_mode = false
+	GameManager.save_progress()
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 
 func _on_chapter_finished() -> void:
@@ -399,6 +419,7 @@ func _transition_to_boss(boss_name: String) -> void:
 
 func _finish_story() -> void:
 	GameManager.story_completed = true
+	GameManager.free_play_unlocked = true
 	GameManager.in_story_mode = false
 	GameManager.save_progress()
 

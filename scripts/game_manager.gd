@@ -28,8 +28,11 @@ const STORY_CHAPTERS: Array[String] = [
 ## Current story chapter index (0-based)
 var story_chapter_index: int = 0
 
-## Whether story mode has been completed at least once
+## Whether the current story save has reached the ending
 var story_completed: bool = false
+
+## Permanent unlock once the player has completed story mode at least once
+var free_play_unlocked: bool = false
 
 ## Whether we are currently in story mode (vs free play)
 var in_story_mode: bool = false
@@ -60,6 +63,7 @@ func advance_chapter() -> bool:
 	story_chapter_index += 1
 	if story_chapter_index >= STORY_CHAPTERS.size():
 		story_completed = true
+		free_play_unlocked = true
 		save_progress()
 		return false
 	save_progress()
@@ -82,6 +86,7 @@ func save_progress() -> void:
 	var config := ConfigFile.new()
 	config.set_value("story", "chapter_index", story_chapter_index)
 	config.set_value("story", "completed", story_completed)
+	config.set_value("story", "free_play_unlocked", free_play_unlocked)
 	config.set_value("story", "resume_title", story_resume_title)
 	config.set_value("story", "resume_chapter", story_resume_chapter)
 	config.save(SAVE_PATH)
@@ -94,6 +99,7 @@ func load_progress() -> bool:
 		return false
 	story_chapter_index = config.get_value("story", "chapter_index", 0)
 	story_completed = config.get_value("story", "completed", false)
+	free_play_unlocked = config.get_value("story", "free_play_unlocked", story_completed)
 	story_resume_title = config.get_value("story", "resume_title", "")
 	story_resume_chapter = config.get_value("story", "resume_chapter", "")
 	return true
@@ -108,6 +114,8 @@ func delete_save() -> void:
 		DirAccess.remove_absolute(SAVE_PATH)
 	story_chapter_index = 0
 	story_completed = false
+	story_resume_title = ""
+	story_resume_chapter = ""
 
 
 func _ready() -> void:

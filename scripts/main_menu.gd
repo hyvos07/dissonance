@@ -47,15 +47,16 @@ func _update_menu_state() -> void:
 	# Continue button: only if save exists and story not completed
 	var has_save: bool = GameManager.has_save()
 	var story_done: bool = GameManager.story_completed
+	var free_play_unlocked: bool = GameManager.free_play_unlocked
 	var in_progress: bool = has_save and not story_done and GameManager.story_chapter_index > 0
 
 	_continue_btn.visible = in_progress
 	_continue_btn.disabled = not in_progress
 
-	# Free Play: only if story completed
-	_freeplay_btn.disabled = not story_done
+	# Free Play stays unlocked after the first story completion.
+	_freeplay_btn.disabled = not free_play_unlocked
 	_freeplay_btn.modulate.a = 1.0
-	if not story_done:
+	if not free_play_unlocked:
 		_freeplay_btn.tooltip_text = "Complete Story Mode to unlock"
 	else:
 		_freeplay_btn.tooltip_text = ""
